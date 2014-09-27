@@ -1,0 +1,36 @@
+<h1><code ng:non-bindable="">MultiTranscludeManagerController</code>
+<div><span class="hint">controller in module <code ng:non-bindable="">ng-directives-utils.multiTransclude</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="ng-directives-utils-multitransclude-controller-page ng-directives-utils-multitransclude-controller-multitranscludemanagercontroller-page"><p>Manage the <em>transclusion producer</em> and <em>transclude consumer</em></p>
+<ul>
+<li>used by <code>ng-multi-transclude-manager</code></li>
+</ul>
+</div></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul class="dependencies"><li><code ng:non-bindable=""><a href="#/api/ng.$log">$log</a></code>
+</li>
+</ul>
+<div class="member method"><h2 id="methods">Methods</h2>
+<ul class="methods"><li><h3 id="methods_registerclonelinking">registerCloneLinking(name, fun)</h3>
+<div class="registerclonelinking"><div class="registerclonelinking-page"><p>register cloneLinking to the manager</p>
+</div><h5 id="methods_registerclonelinking_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>name <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="registerclonelinking-page"><p>directive name, if not passing will treat as the root cloneLinking. Multi root will cause an error.</p>
+</div></td></tr><tr><td>fun</td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="registerclonelinking-page"><p>the cloneLinking function</p>
+</div></td></tr></tbody></table><h5 id="methods_registerclonelinking_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="registerclonelinking-page"><p>unRegister() unRegister function.</p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_supplytransclude">supplyTransclude(name, transclude)</h3>
+<div class="supplytransclude"><div class="supplytransclude-page"><p>supply transclude, root transclude will only execute once. Others may execute several times due to the number of the cloneLinking registration</p>
+</div><h5 id="methods_supplytransclude_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>name <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-string">string</a></td><td><div class="supplytransclude-page"><p>directive name, if not passing will treat as the root transclude. Multi root will cause an error.</p>
+</div></td></tr><tr><td>transclude</td><td><a href="" class="label type-hint type-hint-function">function</a></td><td><div class="supplytransclude-page"><p>transclude function</p>
+</div></td></tr></tbody></table></div>
+</li>
+<li><h3 id="methods_trans">trans()</h3>
+<div class="trans"><div class="trans-page"><p>execute the root transclude function and others</p>
+</div></div>
+</li>
+</ul>
+</div>
+</div>

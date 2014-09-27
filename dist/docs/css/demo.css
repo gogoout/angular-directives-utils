@@ -1,0 +1,143 @@
+/** code */
+.content pre {
+	tab-size : 4;
+}
+
+.content code {
+	padding          : 2px 4px;
+	color            : #D14;
+	white-space      : nowrap;
+	background-color : #F7F7F9;
+	border           : 1px solid #E1E1E8;
+	font-family      : 'Courier New', 'Consolas', monospace;
+}
+
+.content pre > code {
+	background  : none;
+	white-space : pre;
+	border      : none;
+}
+
+/** reset title code in the doc */
+.content > h1 > code {
+	background-color : inherit;
+	color            : inherit;
+	border           : none;
+	padding          : 0;
+	font-size        : inherit;
+}
+
+/** type-hint */
+.type-hint-date {
+	background : pink;
+}
+
+.type-hint-string {
+	background : #3A87AD;
+}
+
+.type-hint-function {
+	background : green;
+}
+
+.type-hint-object {
+	background : #999;
+}
+
+.type-hint-array {
+	background : #F90;
+}
+
+.type-hint-boolean {
+	background : rgb(18, 131, 39);
+}
+
+.type-hint-number {
+	background : rgb(189, 63, 66);
+}
+
+.type-hint-expression {
+	background : purple;
+}
+
+.type-hint-scope {
+	background : #D0C051;
+}
+
+.type-hint-regexp {
+	background : rgb(90, 84, 189);
+}
+
+.type-hint-domelement {
+	background : rgb(95, 158, 160);
+}
+
+/** container form bootstrap3 and fluid span3 span9 */
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+
+[class*="span"] {
+	float        : left;
+	min-height   : 1px;
+	padding-left : 20px;
+	box-sizing   : border-box;
+	margin-left  : 0px;
+}
+
+.span3 {
+	width : 25%;
+}
+
+.span9 {
+	width : 75%;
+}
+
+/** custom example */
+.doc-example-live {
+	background       : none;
+	background-color : #FFF;
+	margin-left      : 0;
+	margin-right     : 0;
+	background-color : #FFF;
+	border-width     : 1px;
+	border-color     : #DDD;
+	box-shadow       : none;
+	position         : relative;
+	padding          : 45px 15px 15px;
+}
+
+.doc-example-live:before {
+	content        : "Example";
+	position       : absolute;
+	top            : 15px;
+	left           : 15px;
+	font-size      : 12px;
+	font-weight    : 700;
+	color          : #BBB;
+	text-transform : uppercase;
+	letter-spacing : 1px;
+}
+
+/**no wrap for the param table */
+.variables-matrix td:first-child {
+	white-space : nowrap;
+}

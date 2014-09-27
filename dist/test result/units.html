@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Unit Test Results</title>
+    <style type="text/css">html,body{font-family:Arial,sans-serif;margin:0;padding:0;}body{padding:10px 40px;}table{width:100%;margin-bottom:20px;}tr.header{background:#ddd;font-weight:bold;border-bottom:none;}td{padding:7px;border-top:none;border-left:1px black solid;border-bottom:1px black solid;border-right:none;}tr.pass td{color:#003b07;background:#86e191;}tr.skip td{color:#7d3a00;background:#ffd24a;}tr.fail td{color:#5e0e00;background:#ff9c8a;}tr:first-child td{border-top:1px black solid;}td:last-child{border-right:1px black solid;}tr.overview{font-weight:bold;color:#777;}tr.overview td{padding-bottom:0px;border-bottom:none;}tr.system-out td{color:#777;}hr{height:2px;margin:30px 0;background:#000;border:none;}</style>
+  </head>
+  <body>
+    <h1>Unit Test Results</h1>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr class="overview">
+        <td colspan="3" title="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36">Browser: Chrome 31.0.1650 (Windows 7)</td>
+      </tr>
+      <tr class="overview">
+        <td colspan="3">Timestamp: 2014-09-27T17:32:51</td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          19 tests / 
+          0 errors / 
+          0 failures / 
+          0 skipped / 
+          runtime: 0.281s
+        </td>
+      </tr>
+      <tr class="header">
+        <td>Status</td>
+        <td>Spec</td>
+        <td>Suite / Results</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.047s</td>
+        <td>should currectly register cloneLinking function</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>should register cloneLinking function several times with same name</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>should not register default cloneLinking function twice</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>should return unregister after register</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.015s</td>
+        <td>should use supplyTransclude to give the transclude function</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>should not use supplyTransclude with repeat names</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>could supply default transclude by not passing the first param</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>should start trans by executing trans()</td>
+        <td>multiTransclude &raquo; MultiTranscludeManagerController</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>should genarate directive</td>
+        <td>multiTransclude &raquo; makeMultiTransclusionDirective service</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>could override the option by passing param</td>
+        <td>multiTransclude &raquo; makeMultiTransclusionDirective service</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.062s</td>
+        <td>should transclude to the currect dom</td>
+        <td>multiTransclude &raquo; fake directive &raquo; no repeat multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>should transclude to the currect dom</td>
+        <td>multiTransclude &raquo; fake directive &raquo; repeat multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.015s</td>
+        <td>every scope of the transcludsion should be same</td>
+        <td>multiTransclude &raquo; fake directive &raquo; repeat multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>should transclude to the currect dom</td>
+        <td>multiTransclude &raquo; fake directive &raquo; default multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>the scope of the default transcludsion and named one should be same</td>
+        <td>multiTransclude &raquo; fake directive &raquo; default multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.031s</td>
+        <td>should only trans the specific transclusion to the dom with no default transclusion</td>
+        <td>multiTransclude &raquo; fake directive &raquo; no default multiTransclude</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0s</td>
+        <td>should replace with the transclusion</td>
+        <td>transcludeReplace &raquo; ngTranscludeReplace</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.016s</td>
+        <td>should has the children scope of the outer scope</td>
+        <td>transcludeReplace &raquo; ngTranscludeReplace</td>
+      </tr>
+      <tr class="pass">
+        <td>Passed in 0.031s</td>
+        <td>should compatible with ng-repeat</td>
+        <td>transcludeReplace &raquo; ngTranscludeReplace</td>
+      </tr>
+    </table>
+    <hr/>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable=""></code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><div class="ng-directives-utils-transcludereplace-page"><p>Provide <code>ng-transclude-replace</code> which familiar with the <code>ng-transclude</code>
+The difference is that</p>
+<ul>
+<li><code>ng-transclude</code> append the transclusion to the element and if there is no transclusion, nothing happens.</li>
+<li><code>ng-transclude-replace</code> replace the element with the transclusion and if there is no transclusion, it will remove itself.</li>
+</ul>
+</div><h2 id="example">Example</h2>
+<div class="example"><div class="ng-directives-utils-transcludereplace-page"><h4 id="example_source">Source</h4>
+<div source-edit="ngTranscludeReplaceDemo" source-edit-deps="angular.js demo.js" source-edit-html="demo.html" source-edit-css="" source-edit-js="demo.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="demo.html">
+<pre class="prettyprint linenums" ng-set-text="demo.html"></pre>
+<script type="text/ng-template" id="demo.html">
+	<div>
+         <table class = "table">
+           <tr>
+             <th>transclude</th>
+             <th>source</th>
+             <th>rendered</th>
+           </tr>
+       
+           <tr>
+             <td><code>ng-transclude</code></td>
+             <td>
+               <pre>&lt;my-test&gt;&lt;p&gt;I'm transclusion&lt;/p&gt;&lt;/my-test&gt;</pre>
+             </td>
+             <td>
+               <my-test><p>I'm transclusion</p></my-test>
+             </td>
+           </tr>
+       
+           <tr>
+             <td><code>ng-transclude-replace</code></td>
+             <td>
+               <pre>&lt;my-test-replace&gt;&lt;p&gt;I'm transclusion&lt;/p&gt;&lt;/my-test-replace&gt;</pre>
+             </td>
+             <td>
+               <my-test-replace><p>I'm transclusion</p></my-test-replace>
+             </td>
+           </tr>
+       
+           <tr>
+             <td><code>ng-transclude</code></td>
+             <td>
+               <pre>&lt;my-test&gt;&lt;/my-test&gt;</pre>
+             </td>
+             <td>
+               <my-test></my-test>
+             </td>
+           </tr>
+       
+           <tr>
+             <td><code>ng-transclude-replace</code></td>
+             <td>
+               <pre>&lt;my-test-replace&gt;&lt;/my-test-replace&gt;</pre>
+             </td>
+             <td>
+               <my-test-replace></my-test-replace>
+             </td>
+           </tr>
+         </table>
+       </div>
+	</script>
+</div>
+<div class="tab-pane" title="demo.js">
+<pre class="prettyprint linenums" ng-set-text="demo.js"></pre>
+<script type="text/ng-template" id="demo.js">
+	angular.module('ngTranscludeReplaceDemo', ['ng-directives-utils.demo']).
+       	directive('myTest', function () {
+       		          return {
+       			          restrict  : 'EA',
+       			          transclude: true,
+       			          template  : '<span>the following span will exist in the dom.' +
+       			                      '<span style=\"border:1px solid black\" ng-transclude></span>' +
+       			                      '</span>'
+       		          };
+       	          }).
+       	directive('myTestReplace', function () {
+       		          return {
+       			          restrict  : 'EA',
+       			          transclude: true,
+       			          template  : '<span>the following span will not exist in the dom.' +
+       			                      '<span style=\"border:1px solid black\" ng-transclude-replace ></span>' +
+       			                      '</span>'
+       		          };
+       	          });
+	</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="ngTranscludeReplaceDemo" ng-set-html="demo.html" ng-eval-javascript="demo.js"></div>
+</div></div>
+</div>

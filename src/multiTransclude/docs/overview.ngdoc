@@ -1,0 +1,99 @@
+@ngdoc overview
+@name ng-directives-utils.multiTransclude
+@id ng-directives-utils.multiTransclude
+@description
+Inspired by [angular ui bootstrap](https://github.com/angular-ui/bootstrap). Make angularJs support multi transclude.
+
+There are already several module which support multi transclude. However, This module has following advantage:
+
+- more semantic writing, allow you to create your own directives which could transclude to everywhere you want in the template.
+(you could use the serivce `makeMultiTransclusionDirective` to easily create)  
+	for example:
+	```js
+	<your-button>
+		<your-button-icon><span class="glyphicon glyphicon-info-sign"/></your-button-icon>
+		<span>this is your button label</span>
+	</your-button>
+	```
+
+- multiple transclude at the template.(see example below)
+- support default transclude(like the `ng-transclude`. see example below)
+- transclude-replace supported
+
+@example
+<example module="ngMultiTranscludeDemo">
+	<file name="demo.js">
+	angular.module('ngMultiTranscludeDemo', ['ng-directives-utils.demo']).
+    	directive('myTest', function () {
+    		          return {
+    			          restrict  : 'EA',
+    			          transclude: true,
+    			          template  : '<span ng-multi-transclude-manager>' +
+    			                      '<span class="singleHere" ng-multi-transclude="labelHere"></span>' +
+    			                      '<span class="singleReplaceHere">' +
+    			                      '<span ng-multi-transclude-replace="iconHere"></span>' +
+    			                      '</span>' +
+    			                      '</span>'
+    		          };
+    	          }).
+    	directive('myTestMulti', function () {
+    		          return {
+    			          restrict  : 'EA',
+    			          transclude: true,
+    			          template  : '<span ng-multi-transclude-manager>' +
+    			                      '<span class="singleHere" ng-multi-transclude="labelHere"></span>' +
+    			                      '<span class="singleHere" ng-multi-transclude="labelHere"></span>' +
+    			                      '<span class="singleHere" ng-multi-transclude="labelHere"></span>' +
+    			                      '<span class="singleReplaceHere">' +
+    			                      '<span ng-multi-transclude-replace="iconHere"></span>' +
+    			                      '</span>' +
+    			                      '</span>'
+    		          };
+    	          }).
+    	directive('myTestDefault', function () {
+    		          return {
+    			          restrict  : 'EA',
+    			          transclude: true,
+    			          template  : '<span ng-multi-transclude-manager>' +
+    			                      '<span class="singleHere" ng-multi-transclude="labelHere"></span>' +
+    			                      '<span class="singleReplaceHere">' +
+    			                      '<span ng-multi-transclude-replace></span>' +
+    			                      '</span>' +
+    			                      '</span>'
+    		          };
+    	          }).
+    	directive('labelHere', ['makeMultiTransclusionDirective', function (makeMultiTransclusionDirective) {
+    		          return makeMultiTransclusionDirective('labelHere');
+    	          }]).
+    	directive('iconHere', ['makeMultiTransclusionDirective', function (makeMultiTransclusionDirective) {
+    		          return makeMultiTransclusionDirective('iconHere');
+    	          }]);
+	</file>
+	<file name="demo.html">
+	<div>
+      <h1>semantic writing</h1>
+      <my-test>
+        <label-here>title here|</label-here>
+        <icon-here><span class = "icon-info-sign icon-white"></span></icon-here>
+        <span>this will not exist after compile</span>
+      </my-test>
+      <hr>
+    
+      <h1>multiple transclude</h1>
+      <my-test-multi>
+        <label-here>title here|</label-here>
+        <icon-here><span class = "icon-info-sign icon-white"></span></icon-here>
+        <span>this will not exist after compile</span>
+      </my-test-multi>
+      <hr>
+    
+      <h1>support default transclude
+        <small>ng-multi-transclude ng-multi-transclude-replace</small>
+      </h1>
+      <my-test-default>
+        <label-here>title here|</label-here>
+        <span>this will exist</span>
+      </my-test-default>
+    </div>
+	</file>
+</example>
